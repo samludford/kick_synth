@@ -27,37 +27,37 @@ class ofApp : public ofBaseApp{
         void audioIn(float * input, int bufferSize, int nChannels);
 
     
-    int		bufferSize; /* buffer size */
-    int		sampleRate;
+        int		bufferSize; /* buffer size */
+        int		sampleRate;
 		
     
-    const float padding {40.0};
-    vector<double> display_buffer;
+        const float padding {40.0};
+        vector<double> display_buffer;
     
-    maxiOsc myOsc;
-    maxiEnv env;
-    maxiEnv pitch;
+        maxiOsc myOsc;
+        maxiEnv env;
+        maxiEnv pitch;
     
-    double amp_current;
-    double ramp_val;
-    double wave;
+        double amp_current;
+        double ramp_val;
+        double wave;
 
     
-    ofxMaxiFFT fft;
-    ofxMaxiFFTOctaveAnalyzer oct;
+        ofxMaxiFFT fft;
+        ofxMaxiFFTOctaveAnalyzer oct;
     
-    ofxPanel gui;
-    ofParameterGroup params;
-    ofParameter<double> attack {20.0};
-    ofParameter<double> release {60.0};
-    ofParameter<double> pitch_sweep {20.0};
-    ofParameter<double> pitch_max {7000.0};
-    ofParameter<double> pitch_min {100};
+        ofxPanel gui;
+        ofParameterGroup params;
+        ofParameter<double> attack {20.0};
+        ofParameter<double> release {60.0};
+        ofParameter<double> pitch_sweep {20.0};
+        ofParameter<double> pitch_max {7000.0};
+        ofParameter<double> pitch_min {100};
     
-    void attackChanged(double &p);
-    void releaseChanged(double &p);
-    void pitchSweepChanged(double &p);
+        void attackChanged(double &p);
+        void releaseChanged(double &p);
+        void pitchSweepChanged(double &p);
 
-    bool held {false};
+        bool held {false};
     
 };

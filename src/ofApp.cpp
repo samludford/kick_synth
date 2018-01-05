@@ -114,8 +114,6 @@ void ofApp::audioOut(float * output, int bufferSize, int nChannels) {
             pitch.trigger = 0.0;
         }
         
-        // val between 0.0 and 1.0
-        
         float freq = ofMap(ramp_val, 0.0, 0.9, pitch_max, pitch_min);
 
         wave = myOsc.sinewave(freq) * amp_current;
@@ -125,7 +123,7 @@ void ofApp::audioOut(float * output, int bufferSize, int nChannels) {
             oct.calculate(fft.magnitudes);
         }
 
-        output[i*nChannels    ] = wave; /* You may end up with lots of outputs. add them here */
+        output[i*nChannels    ] = wave;
         output[i*nChannels + 1] = wave;
         
         display_buffer[i] = wave;
